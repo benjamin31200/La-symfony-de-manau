@@ -20,6 +20,6 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "node-sass": "^7.0.1"
+        "@popperjs/core": "^2.11.2"
     }
 }
