@@ -56,6 +56,11 @@ class Product
      */
     private $powerfull;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $category;
+
 
 
     public function getId(): ?int
@@ -155,6 +160,18 @@ class Product
     public function setBrand(string $brand): self
     {
         $this->brand = $brand;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
