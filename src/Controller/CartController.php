@@ -55,7 +55,7 @@ class CartController extends AbstractController
         $cart = $session->get("cart", []);
         /** @var int $id */
         $id = $product->getId();
-        if (isset($id)) {
+        if (is_array($cart)) {
             if (array_key_exists($id, $cart)) {
                 $cart[$id]++;
             } else {
