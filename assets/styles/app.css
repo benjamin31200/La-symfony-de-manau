@@ -1,3 +1,6 @@
-body {
-    background-color: lightgray;
-}
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    background-size: cover;
+  }
