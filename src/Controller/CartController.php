@@ -69,7 +69,7 @@ class CartController extends AbstractController
         $session->set("cart", $cart);
 
 
-        return $this->redirectToRoute("whitemark_customer_product_show");
+        return $this->redirectToRoute("index");
     }
 
     /**
@@ -92,7 +92,7 @@ class CartController extends AbstractController
             }
             $session->set("cart", $cart);
         }
-        return $this->redirectToRoute("whitemark_customer_cart_index", [
+        return $this->redirectToRoute("index", [
         ]);
     }
 
@@ -117,7 +117,7 @@ class CartController extends AbstractController
             }
             $session->set("cart", $cart);
         }
-        return $this->redirectToRoute("whitemark_customer_cart_index", [
+        return $this->redirectToRoute("index", [
         ]);
     }
 
@@ -138,8 +138,7 @@ class CartController extends AbstractController
             }
             $session->set("cart", $cart);
         }
-        return $this->redirectToRoute("whitemark_customer_cart_index", [
-        ]);
+        return $this->redirectToRoute("index");
     }
 
 }
