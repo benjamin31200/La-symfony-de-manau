@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comparateur
+{% endblock %}
+
+{% block body %}
+	<h1>comparateur</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Image</th>
+				<th>Marque</th>
+				<th>Modele</th>
+				<th>Prix</th>
+				<th>Alimentation</th>
+				<th>Profondeur</th>
+				<th>Inclinaison</th>
+				<th>Vitesse</th>
+				<th>Puissance</th>
+				<th>Category</th>
+                <th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for element in comparatorData %}
+				<tr>
+					<td>{{ element.product.picture }}</td>
+					<td>{{ element.product.brand }}</td>
+					<td>{{ element.product.modele }}</td>
+					<td>{{ element.product.price }}</td>
+					<td>{{ element.product.alimentation }}</td>
+					<td>{{ element.product.depth }}</td>
+					<td>{{ element.product.tilt }}</td>
+					<td>{{ element.product.speed }}</td>
+					<td>{{ element.product.powerfull}}</td>
+					<td>{{ element.product.category }}</td>
+					<td>
+						<a href="{{ path('customer_cart_add', {'id': element.product.id}) }}">ajouter au panier</a>
+
+						<a href="{{ path('comparator_delete', {'id': element.product.id}) }}">supprimer</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="11">aucun produit dans le comparateur</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

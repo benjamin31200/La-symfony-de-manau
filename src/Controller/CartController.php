@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
- * @Route("/cart", name="whitemark_customer_cart_")
+ * @Route("/cart", name="customer_cart_")
  */
 class CartController extends AbstractController
 {
@@ -24,7 +24,7 @@ class CartController extends AbstractController
      * @return Response A response instance
      */
     public function index(
-        SessionInterface $session,  
+        SessionInterface $session,
         CartManager $cartManager
     ): Response {
         /** @var array $cart */
@@ -92,8 +92,7 @@ class CartController extends AbstractController
             }
             $session->set("cart", $cart);
         }
-        return $this->redirectToRoute("index", [
-        ]);
+        return $this->redirectToRoute("index", []);
     }
 
     /**
@@ -117,8 +116,7 @@ class CartController extends AbstractController
             }
             $session->set("cart", $cart);
         }
-        return $this->redirectToRoute("index", [
-        ]);
+        return $this->redirectToRoute("index", []);
     }
 
     /**
@@ -140,5 +138,4 @@ class CartController extends AbstractController
         }
         return $this->redirectToRoute("index");
     }
-
 }
