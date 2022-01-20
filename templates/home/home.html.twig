@@ -200,7 +200,7 @@
 	<div class="row row-cols-2">
 		{% for product in products %}
 
-			<div class="col" style="max-width: 400px;background-color: white ; margin: 1rem 1rem 1rem 1rem;">
+			<div class="card" style="max-width: 400px;background-color: white ; margin: 1rem 1rem 1rem 1rem;">
 				<img src="{{product.picture}}" class="card-img-top" alt="{{product.modele}}" style="
 										    object-fit: cover;
 										    object-position: left;
@@ -208,7 +208,7 @@
 											background: white;
 					
 										">
-				<div class="col-md-8" style=" width: 100% ; background-color: white ;">
+				<div class="col-md-15" style="max-width:100% ;background-color: white ;">
 					<div class="card-body" style=" width: 100% ; background-color: white ;">
 						<h5 class="card-title">{{product.modele}}</h5>
 						<p class="card-text">{{product.brand}}</p>
