@@ -17,6 +17,12 @@ class SearchListType extends AbstractType
             ->add('title',
             TextType::class,
             [
+                'label' => 'Type de recherche',
+                'required' => false
+            ])
+            ->add('name',
+            TextType::class,
+            [
                 'label' => 'Nom de la recherche',
                 'required' => false
             ])
