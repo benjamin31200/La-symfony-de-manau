@@ -3,8 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Product;
-
-
+use App\Repository\ProductRepository;
 use App\Service\CartManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
- * @Route("/cart", name="cart_")
+ * @Route("/", name="cart_")
  */
 class CartController extends AbstractController
 {
@@ -25,6 +24,7 @@ class CartController extends AbstractController
      */
     public function index(
         SessionInterface $session,
+        ProductRepository $productRepository,
         CartManager $cartManager
     ): Response {
         /** @var array $cart */
@@ -33,8 +33,9 @@ class CartController extends AbstractController
         $cartDatas = $cartManager->getDatasFromCart($cart);
 
         $session->set('cartTotal', $cartDatas['total']);
-        return $this->render('cart/index.html.twig', [
+        return $this->render('home/home.html.twig', [
             'dataCart' => $cartDatas['data'],
+            'products' => $productRepository->findAll(),
             'total' => $cartDatas['total'],
         ]);
     }
@@ -70,7 +71,7 @@ class CartController extends AbstractController
         $session->set("cart", $cart);
 
 
-        return $this->redirectToRoute("comparator_index");
+        return $this->redirectToRoute("cart_index");
     }
 
     /**

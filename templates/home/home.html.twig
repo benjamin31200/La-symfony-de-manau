@@ -1,20 +1,249 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-	{% for product in products %}
-		<div class="card" style="max-width: 540px;">
-			<div class="row g-0">
-				<div class="col-md-4">
-					<img src="{{product.picture}}" class="card-img-top" alt="{{product.modele}}">
+
+	<div class="Category_bradcrumbContainer__grwyN">
+		<ul class="root_4df1dd45 Category_breadcrumb__h6MWL">
+			<li class="item_4df1dd45">
+				<a class="root_594203a0 link_594203a0" href="/">Accueil</a>
+				<svg aria-hidden="true" focusable="false" height="1em" role="presentation" width="1em" viewbox="0 0 24 24" class="svg_9c8206b6 arrow_4df1dd45">
+					<g id="iconsSystemArrowRight">
+						<path d="M9.293 15.463l3.88-3.88-3.88-3.88a.996.996 0 111.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41l-4.59 4.59a.996.996 0 01-1.41 0c-.38-.39-.39-1.03 0-1.42z" fill="currentColor"></path>
+					</g>
+				</svg>
+			</li>
+			<li class="item_4df1dd45">
+				<a class="root_594203a0 link_594203a0" href="/hub/outillage-463">Outillage</a>
+				<svg aria-hidden="true" focusable="false" height="1em" role="presentation" width="1em" viewbox="0 0 24 24" class="svg_9c8206b6 arrow_4df1dd45">
+					<use href="#iconsSystemArrowRight"></use>
+				</svg>
+			</li>
+			<li class="item_4df1dd45">
+				<svg aria-hidden="true" focusable="false" height="1em" role="presentation" width="1em" viewbox="0 0 24 24" class="svg_9c8206b6 mobileArrow_4df1dd45">
+					<g id="iconsSystemArrowLeft">
+						<path d="M14.71 15.88L10.83 12l3.88-3.88a.996.996 0 10-1.41-1.41L8.71 11.3a.996.996 0 000 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .38-.39.39-1.03 0-1.42z" fill="currentColor"></path>
+					</g>
+				</svg>
+				<a class="root_594203a0 link_594203a0" href="/hub/outillage-electroportatif-464">Outillage électroportatif</a>
+				<svg aria-hidden="true" focusable="false" height="1em" role="presentation" width="1em" viewbox="0 0 24 24" class="svg_9c8206b6 arrow_4df1dd45">
+					<use href="#iconsSystemArrowRight"></use>
+				</svg>
+			</li>
+			<li class="item_4df1dd45">
+				<span class="root_594203a0">Perceuse, visseuse, perforateur, burineur, marteau-piqueur</span>
+			</li>
+		</ul>
+	</div>
+	<section class="homepage">
+		<section class="leftSidebar">
+			<div class="FiltersPanel_body__xz9Wj">
+				<div data-testid="accordion" class="root_0d92d2ad flat_0d92d2ad disabled_0d92d2ad ActiveFilters_root__ayNdi">
+					<div class="header_0d92d2ad" data-testid="accordionHeader" role="button" aria-expanded="false" aria-controls="section-activeFilters" id="label-activeFilters" tabindex="-1">
+						<div class="Title_root__NfZ1a root_c380a67c body2_c380a67c bold_c380a67c primaryDark_c380a67c">
+							<span class="Badge_root__HztQO Badge_disabled__OK3mp Title_badge__encaL">0</span>
+							filtre actif</div>
+						<svg aria-hidden="true" focusable="false" height="1em" role="presentation" width="1em" viewbox="0 0 24 24" tabindex="0" aria-label="arrow_down" class="svg_9c8206b6 arrow_0d92d2ad">
+							<g id="iconsSystemArrowDown">
+								<path d="M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 111.41 1.41l-4.59 4.59a.996.996 0 01-1.41 0L6.7 10.7a.996.996 0 010-1.41c.39-.38 1.03-.39 1.42 0z" fill="currentColor"></path>
+							</g>
+						</svg>
+					</div>
+					<div class="content_0d92d2ad transition_0d92d2ad" role="region" aria-labelledby="label-activeFilters" id="section-activeFilters" data-testid="accordionContent" style="height: 0px;">
+						<div class="body_0d92d2ad"></div>
+					</div>
 				</div>
-				<div class="col-md-8">
-					<div class="card-body">
-						<h5 class="card-title">{{product.modele}}</h5>
-						<p class="card-text">{{product.brand}}</p>
-						<p class="card-text">{{product.price|number_format(2, '.',)}}€</p>
+				<div class="select">
+					<label class="wrapper" for="states">Trier par:</label>
+					<div class="button dropdown">
+						<select id="colorselector">
+							<option value="red">Pertinence</option>
+							<option value="yellow">Prix croissant</option>
+							<option value="blue">Prix décroissant</option>
+							<option value="blue">Notes</option>
+						</select>
 					</div>
 				</div>
 			</div>
+			<div class="checkbox_741b4773 InlineFilter_root__6dBss"><input class="input_741b4773" type="checkbox" id="has_free_delivery" value="false"><label class="label_741b4773" for="has_free_delivery">
+					<div class="InlineFilter_icon__BLxmM">
+						<svg aria-hidden="true" focusable="false" height="16px" role="presentation" width="16px" viewbox="0 0 16 14" class="svg_9c8206b6">
+							<g id="iconsSystemVerified">
+								<path d="M14.947 6.56l-1.24-1.413.173-1.874a.67.67 0 00-.513-.713l-1.84-.42-.96-1.62a.664.664 0 00-.833-.273L8 1 6.274.26a.662.662 0 00-.834.273l-.966 1.614-1.834.413a.664.664 0 00-.52.713l.174 1.867-1.24 1.42a.67.67 0 000 .88l1.24 1.413-.174 1.88a.67.67 0 00.514.714l1.84.42.96 1.613a.67.67 0 00.84.273L8 13l1.727.74a.662.662 0 00.833-.273l.96-1.62 1.84-.42a.663.663 0 00.514-.714L13.7 8.84l1.24-1.413a.644.644 0 00.007-.867zM6.254 9.673l-1.587-1.6a.664.664 0 010-.94l.047-.046c.26-.26.686-.26.946 0l1.074 1.08 3.433-3.44c.26-.26.687-.26.947 0l.046.046c.26.26.26.68 0 .94l-3.946 3.96a.688.688 0 01-.96 0z" fill="currentColor"></path>
+							</g>
+						</svg>
+					</div>
+					<div class="InlineFilter_label__hEdkh">Livraison gratuite</div>
+				</label>
+			</div>
+			<div data-testid="accordion" class="root_0d92d2ad open_0d92d2ad flat_0d92d2ad FiltersPanel_filter__Y02l7">
+				<div class="header_0d92d2ad" data-testid="accordionHeader" role="button" aria-expanded="true" aria-controls="section-prices.per_item.actual_price.with_vat.as_float" id="label-prices.per_item.actual_price.with_vat.as_float" tabindex="-1">Prix (€)<svg aria-hidden="true" focusable="false" height="1em" role="presentation" width="1em" viewbox="0 0 24 24" tabindex="0" aria-label="arrow_down" class="svg_9c8206b6 arrow_0d92d2ad">
+						<use href="#iconsSystemArrowDown"></use>
+					</svg>
+				</div>
+				<div class="content_0d92d2ad contentOpen_0d92d2ad transition_0d92d2ad" role="region" aria-labelledby="label-prices.per_item.actual_price.with_vat.as_float" id="section-prices.per_item.actual_price.with_vat.as_float" data-testid="accordionContent" style="height: 68px;">
+					<div class="body_0d92d2ad">
+						<div class="RangeSelect_root__S90GU RangeFilter_selectRange__QAmPM">
+							<div class="RangeSelect_inputs__gHCGs">
+								<div class="RangeSelect_min__Y8B9B container_90f49d77">
+									<div class="content_90f49d77">
+										<div class="wrapper_90f49d77"><input id="minPrices.per_item.actual_price.with_vat.as_float" class="input_90f49d77" type="number" name="min" pattern="[0-9]*" min="2.74" max="7496" value="3"><label for="minPrices.per_item.actual_price.with_vat.as_float" class="label_90f49d77 on_90f49d77">Minimum</label>
+										</div>
+									</div>
+								</div>
+								<div class="RangeSelect_max__FBhYq container_90f49d77">
+									<div class="content_90f49d77">
+										<div class="wrapper_90f49d77"><input id="maxPrices.per_item.actual_price.with_vat.as_float" class="input_90f49d77" type="number" name="max" pattern="[0-9]*" min="3" max="7496.86" value="7496"><label for="maxPrices.per_item.actual_price.with_vat.as_float" class="label_90f49d77 on_90f49d77">Maximum</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-testid="accordion" class="root_0d92d2ad open_0d92d2ad flat_0d92d2ad FiltersPanel_filter__Y02l7">
+				<div class="header_0d92d2ad" data-testid="accordionHeader" role="button" aria-expanded="true" aria-controls="section-rating_rounded_down" id="label-rating_rounded_down" tabindex="-1">Notes<svg aria-hidden="true" focusable="false" height="1em" role="presentation" width="1em" viewbox="0 0 24 24" tabindex="0" aria-label="arrow_down" class="svg_9c8206b6 arrow_0d92d2ad">
+						<use href="#iconsSystemArrowDown"></use>
+					</svg>
+				</div>
+				<div class="content_0d92d2ad contentOpen_0d92d2ad transition_0d92d2ad" role="region" aria-labelledby="label-rating_rounded_down" id="section-rating_rounded_down" data-testid="accordionContent" style="height: 94.4px;">
+					<div class="body_0d92d2ad">
+						<div class="MultiSelect_root__jRizF RatingsFilter_multiSelect__33ku0">
+							<div class="checkbox_741b4773 MultiSelectItem_root__ys4fG MultiSelect_item__9g1AW"><input class="input_741b4773" type="checkbox" id="4&amp;more-4__4.5__5" value="false"><label class="label_741b4773" for="4&amp;more-4__4.5__5">
+									<div class="Label_label__c5f_2 root_c380a67c body2_c380a67c regular_c380a67c primaryDark_c380a67c">
+										<div class="root_05bda3b9 Ratings_ratings__YyqGV">
+											<span class="stars_05bda3b9" aria-label="4/5" style="background-position-y: 80%;"></span>
+										</div>4 et plus</div>
+									<div class="Label_count__cAJGq root_c380a67c small_c380a67c regular_c380a67c primaryDark_c380a67c">1345</div>
+								</label>
+							</div>
+							<div class="checkbox_741b4773 MultiSelectItem_root__ys4fG MultiSelect_item__9g1AW"><input class="input_741b4773" type="checkbox" id="3&amp;more-3__3.5__4__4.5__5" value="false"><label class="label_741b4773" for="3&amp;more-3__3.5__4__4.5__5">
+									<div class="Label_label__c5f_2 root_c380a67c body2_c380a67c regular_c380a67c primaryDark_c380a67c">
+										<div class="root_05bda3b9 Ratings_ratings__YyqGV">
+											<span class="stars_05bda3b9" aria-label="3/5" style="background-position-y: 60%;"></span>
+										</div>3 et plus</div>
+									<div class="Label_count__cAJGq root_c380a67c small_c380a67c regular_c380a67c primaryDark_c380a67c">1583</div>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-testid="accordion" class="root_0d92d2ad flat_0d92d2ad">
+				<div class="header_0d92d2ad" data-testid="accordionHeader" role="button" aria-expanded="false" aria-controls="section-delivery" id="label-delivery" tabindex="-1">Livraison<svg aria-hidden="true" focusable="false" height="1em" role="presentation" width="1em" viewbox="0 0 24 24" tabindex="0" aria-label="arrow_down" class="svg_9c8206b6 arrow_0d92d2ad">
+						<use href="#iconsSystemArrowDown"></use>
+					</svg>
+				</div>
+				<div class="checkbox_741b4773 InlineFilter_root__6dBss InlineFilter_disabled__LfZe6 FiltersPanel_filter__Y02l7"><input class="input_741b4773" type="checkbox" id="is_eco_responsible" disabled="" value="false"><label class="label_741b4773" for="is_eco_responsible">
+						<div class="InlineFilter_icon__BLxmM">
+							<svg aria-hidden="true" focusable="false" height="1em" role="presentation" width="1em" viewbox="-2 -2 24 24" class="svg_9c8206b6">
+								<g id="iconsSystemBoxLeaf">
+									<rect width="20" height="20" rx="4" fill="#21785B"></rect>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M5.66147 7.12087C3.67084 9.11219 3.67084 12.3362 5.64689 14.3276C6.71876 11.8475 8.62918 9.77596 11.0136 8.54324C8.99376 10.2501 7.57918 12.6353 7.08334 15.3414C8.97918 16.2386 11.3125 15.9104 12.8802 14.3421C15.4177 11.8038 15.8333 4.16672 15.8333 4.16672C15.8333 4.16672 8.19897 4.58249 5.66147 7.12087Z" fill="white"></path>
+								</g>
+							</svg>
+						</div>
+						<div class="InlineFilter_label__hEdkh">Éco-responsable</div>
+					</label>
+				</div>
+				<div class="checkbox_741b4773 InlineFilter_root__6dBss InlineFilter_disabled__LfZe6 FiltersPanel_filter__Y02l7"><input class="input_741b4773" type="checkbox" id="is_local" disabled="" value="false"><label class="label_741b4773" for="is_local">
+						<div class="InlineFilter_icon__BLxmM">
+							<svg aria-hidden="true" focusable="false" height="1em" role="presentation" width="1em" viewbox="-4 -4 24 24" class="svg_9c8206b6">
+								<g id="iconFlagRoundFrance">
+									<circle cx="7.99999" cy="8.00002" r="7.33333" fill="#FAFAFA"></circle>
+									<path d="M15.3333 8.00001C15.3333 4.84693 13.3432 2.15895 10.5507 1.1228V14.8772C13.3432 13.8411 15.3333 11.1531 15.3333 8.00001Z" fill="#D80027"></path>
+									<path d="M0.666656 8.00001C0.666656 11.1531 2.65674 13.8411 5.44928 14.8772V1.1228C2.65674 2.15895 0.666656 4.84693 0.666656 8.00001Z" fill="#2E56B1"></path>
+								</g>
+							</svg>
+						</div>
+						<div class="InlineFilter_label__hEdkh">Origine France</div>
+					</label>
+				</div>
+			</div>
+		</section>
+		<div class="container">
+			<div class="row row-cols-2">
+				{% for product in products %}
+					<div class="card" style="max-width: 400px;background-color: white ; margin: 1rem 1rem 1rem 1rem;">
+						<img src="{{product.picture}}" class="card-img-top" alt="{{product.modele}}">
+						<div class="col-md-15" style=" width: 100% ; background-color: white ;">
+							<div class="card-body" style=" width: 100% ; background-color: white ;">
+								<h5 class="card-title">{{product.modele}}</h5>
+								<p class="card-text">{{product.brand}}</p>
+								<p class="card-description">{{product.price|number_format(2, '.',)}}€</p>
+							</div>
+							<div class="button" display>
+								<a href="{{ path('cart_add', {'id': product.id}) }}">
+									<button class="button button-basket"></button>
+								</a>
+								<a href="{{ path('comparator_add', {'id': product.id}) }}">
+									<span data-descr="Ajouter au comparateur">
+										<button class="button-comparator"></button>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
 		</div>
-	{% endfor %}
+		<div class="navigation">
+			<ul>
+				<li>
+					<a href="#">
+						<span class="icon">
+							<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+						</span>
+						<span class="icon"></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="icon">
+							<i class="fa fa-balance-scale" aria-hidden="true"></i>
+						</span>
+						<span class="icon"></span>
+					</a>
+				</li>
+				<li>
+					<div class="example-wrapper">
+						<div class="cart">
+							<div class="cart__content">
+								{% for element in dataCart %}
+									<div class="productInCart">
+										<div class="product__informations">
+											<div class="up">
+												<div class="product__delete"></div>
+												<div class="product__model">{{ element.product.modele }}</div>
+											</div>
+											<div class="middle">
+												<div>{{ element.product.price|number_format(2) }}€</div>
+											</div>
+										</div>
+										<div class="choice">
+											<div class="product__actions"></div>
+											<div class="total__product">{{ element.totalproduct|number_format(2) }}€</div>
+										</div>
+									</div>
+									<hr>
+								{% else %}
+									<div class="empty__cart">
+										<h2>Votre panier est vide</h2>
+									</div>
+								{% endfor %}
+							</div>
+							{% if total > 0 %}
+								<div class="cart__action">
+									<div class="total__total">
+										<h2>Total:
+											{{ total|number_format(2) }}€</h2>
+									</div>
+								</div>
+							{% endif %}
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
 {% endblock %}

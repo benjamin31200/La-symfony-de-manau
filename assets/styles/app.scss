@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: lightgray;
+    background-color: rgb(255, 255, 255);
 }
 .topnav a:hover {
   border-bottom: 3px solid red;
@@ -15,7 +15,7 @@ body {
 
 .box {
   position: absolute;
-  top: 15%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -59,10 +59,66 @@ i {
   font-weight: 700;
 }
 
+.search__card {
+  box-shadow: 5px 5px 5px black;
+}
+
 .root_4df1dd45 {
   margin-top: 3.5rem;
   list-style-type: none;
   display: flex;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation {
+  position: sticky;
+  width: 80px;
+  height: 100%;
+  background: #fcfcfc;
+  transition: 0.5s;
+  overflow: hidden;
+  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.fa-shopping-basket {
+  margin-right: 0.2rem;
+}
+
+.fa-balance-scale {
+  margin-top: 3rem;
+}
+
+.navigation ul {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 1.5rem;
+    margin-left: 1rem;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #fff
+}
+
+.navigation:hover {
+  width: 300px;
 }
 
 .root_0d92d2ad.flat_0d92d2ad.disabled_0d92d2ad.ActiveFilters_root__ayNdi {
@@ -77,6 +133,29 @@ i {
   border-radius: 4px;
   pointer-events: none;
   margin-top: 8px;
+}
+
+.select {
+margin: 0.5rem;
+}
+
+.header_0d92d2ad {
+   background-color: rgb(255 255 255);
+    margin-top: 0.5rem;
+}
+
+.root_0d92d2ad.open_0d92d2ad.flat_0d92d2ad.FiltersPanel_filter__Y02l7 {
+  margin-top: 0.5rem;
+    background-color: rgb(255 255 255);
+    height: 8rem;
+}
+
+.checkbox_741b4773 {
+  margin-top: 0.5rem;
+}
+
+.MmfLabel_root__Gefie {
+  background-color: rgb(255 255 255);
 }
 
 .header_0d92d2ad {
@@ -98,6 +177,7 @@ i {
   font-family: Open Sans, mm-main, arial, sans-serif;
   box-sizing: border-box;
   display: flex;
+  margin: 0.5rem;
   align-items: center;
   min-height: 56px;
   border-radius: 4px;
@@ -110,7 +190,6 @@ i {
 
 .checkbox_741b4773 {
   position: relative;
-  left: 1rem;
   top: 0.2rem;
 }
 
@@ -134,4 +213,79 @@ i {
 
 .select {
   display: flex;
+}
+
+.flex-col {
+  width: 10rem;
+}
+
+.button-basket {
+  background: url(https://t3.ftcdn.net/jpg/00/26/12/44/240_F_26124444_6ExT1DaHIGJZmIpnKJSv2GJID7QUio1e.jpg);
+  background-size: cover;
+  width: 15rem;
+  height: 4.5rem;
+  bottom: 1rem;
+  position: relative;
+  cursor: pointer;
+  justify-content: flex-end;
+}
+
+.card-img-top {
+  object-fit: cover;
+  object-position: left;
+  background-size: cover;
+  height: 25rem;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 30rem;
+}
+
+.button-comparator {
+  background: url(https://edinwomensaid.co.uk/wp-content/uploads/2016/03/scales-240x240.png);
+  background-size: contain;
+  width: 3rem;
+  height: 3rem;
+  right: 1rem;
+  bottom: 0.2rem;
+  position: relative;
+  cursor: pointer;
+  justify-content: flex-end;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+border-radius: 0;
+border: none;
+}
+
+.leftSidebar {
+  width: 22%;
+}
+
+span[data-descr] {
+  position: relative;
+  text-decoration: underline;
+  color: #00F;
+  cursor: help;
+}
+
+span[data-descr]:hover::after {
+  content: attr(data-descr);
+  position: absolute;
+  left: 50px;
+  bottom: 10px;
+  min-width: 200px;
+  border: 1px #000000 solid;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 12px;
+  color: #000000;
+  font-size: 14px;
+  z-index: 1;
 }

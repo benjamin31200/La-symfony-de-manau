@@ -1,4 +1,8 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('comparator') }}
+{% endblock %}
 
 {% block title %}Comparateur
 {% endblock %}
@@ -6,8 +10,8 @@
 {% block body %}
 	<h1>comparateur</h1>
 
-	<table class="table" style = "margin-top: 5rem;">
-		<thead>
+	<table class="table">
+		<thead class="tr">
 			<tr>
 				<th>Image</th>
 				<th>Marque</th>
@@ -19,31 +23,53 @@
 				<th>Vitesse</th>
 				<th>Puissance</th>
 				<th>Category</th>
-                <th>Action</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
-			{% for element in comparatorData %}
-				<tr>
-					<td>{{ element.product.picture }}</td>
-					<td>{{ element.product.brand }}</td>
-					<td>{{ element.product.modele }}</td>
-					<td>{{ element.product.price }}</td>
-					<td>{{ element.product.alimentation }}</td>
-					<td>{{ element.product.depth }}</td>
-					<td>{{ element.product.tilt }}</td>
-					<td>{{ element.product.speed }}</td>
-					<td>{{ element.product.powerfull}}</td>
-					<td>{{ element.product.category }}</td>
+			{% for element in comparatorData|sort((a, z) => a.product.category <=> z.product.category) %}
+				<tr class="line">
+					<td><img src="{{ element.product.picture }}" class="img" alt="{{element.product.modele}}"></td>
 					<td>
-						<a href="{{ path('cart_add', {'id': element.product.id}) }}">ajouter au panier</a>
-
-						<a href="{{ path('comparator_delete', {'id': element.product.id}) }}">supprimer</a>
+						<p>{{ element.product.brand }}</p>
+					</td>
+					<td>
+						<p>{{ element.product.modele }}</p>
+					</td>
+					<td>
+						<p>{{ element.product.price }}€</p>
+					</td>
+					<td>
+						<p>{{ element.product.alimentation }}</p>
+					</td>
+					<td>
+						<p>{{ element.product.depth }}mm</p>
+					</td>
+					<td>
+						<p>{{ element.product.tilt }}°</p>
+					</td>
+					<td>
+						<p>{{ element.product.speed }}tr/mn</p>
+					</td>
+					<td>
+						<p>{{ element.product.powerfull}}W</p>
+					</td>
+					<td>
+						<p>{{ element.product.category }}</p>
+					</td>
+					<td class="action">
+						<div class="button">
+							<a href="{{ path('cart_add', {'id': element.product.id}) }}">
+								<img class="ajout" src="/build/images/panier.6cd3b47d" alt="ajouter au panier">
+							</a>
+							<a class="delete" href="{{ path('comparator_delete', {'id': element.product.id}) }}">X</a>
+						</td>
 					</td>
 				</tr>
+
 			{% else %}
 				<tr>
-					<td colspan="11">aucun produit dans le comparateur</td>
+					<td class="empty" colspan="11">aucun produit dans le comparateur</td>
 				</tr>
 			{% endfor %}
 		</tbody>
