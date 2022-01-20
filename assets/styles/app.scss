@@ -87,10 +87,18 @@ i {
 
 .fa-shopping-basket {
   margin-right: 0.2rem;
+  cursor: pointer;
 }
 
 .fa-balance-scale {
   margin-top: 3rem;
+  cursor: pointer;
+}
+
+.basketIMG {
+  width: 10rem;
+  height: 10rem;
+  background-size: cover;
 }
 
 .navigation ul {

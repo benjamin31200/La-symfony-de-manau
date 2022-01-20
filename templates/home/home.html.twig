@@ -209,12 +209,14 @@
 					<div class="example-wrapper">
 						<div class="cart">
 							<div class="cart__content">
+							{% if  dataCart %}
 								{% for element in dataCart %}
 									<div class="productInCart">
 										<div class="product__informations">
 											<div class="up">
 												<div class="product__delete"></div>
 												<div class="product__model">{{ element.product.modele }}</div>
+												<div class="product__image"><img src="{{element.product.picture}}" class="basketIMG" alt="{{element.product.modele}}"></div>
 											</div>
 											<div class="middle">
 												<div>{{ element.product.price|number_format(2) }}€</div>
@@ -226,12 +228,25 @@
 										</div>
 									</div>
 									<hr>
-								{% else %}
+								{# {% else %}
 									<div class="empty__cart">
 										<h2>Votre panier est vide</h2>
-									</div>
-								{% endfor %}
+									</div> #}
+									
+								
+								<div class="action__total">
+						<div>
+							<a class="delete" href="{{ path('cart_article_delete', {'id': element.product.id}) }}">X</a>
+						</div>
+						<div>
+							<a class="button" href="">Valider le Panier</a>
+						</div>
+					</div>
+					
+					{% endfor %}
+					
 							</div>
+							{% endif %}
 							{% if total > 0 %}
 								<div class="cart__action">
 									<div class="total__total">
