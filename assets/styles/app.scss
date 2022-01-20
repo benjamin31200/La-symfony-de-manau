@@ -139,3 +139,66 @@ i {
 .flex-col {
   width: 10rem;
 }
+
+.button-basket {
+  background: url(https://t3.ftcdn.net/jpg/00/26/12/44/240_F_26124444_6ExT1DaHIGJZmIpnKJSv2GJID7QUio1e.jpg);
+  background-size: cover;
+  width: 15rem;
+  height: 4.5rem;
+  bottom: 1rem;
+  position: relative;
+  cursor: pointer;
+  justify-content: flex-end;
+}
+
+.card-img-top {
+  background-size: cover;
+  width: 25rem;
+  height: 18rem;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 30rem;
+}
+
+.button-comparator {
+  background: url(https://edinwomensaid.co.uk/wp-content/uploads/2016/03/scales-240x240.png);
+  background-size: contain;
+  width: 3rem;
+  height: 3rem;
+  right: 1rem;
+  bottom: 0.2rem;
+  position: relative;
+  cursor: pointer;
+  justify-content: flex-end;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.button {
+border-radius: 0;
+border: none;
+}
+
+span[data-descr] {
+  position: relative;
+  text-decoration: underline;
+  color: #00F;
+  cursor: help;
+}
+
+span[data-descr]:hover::after {
+  content: attr(data-descr);
+  position: absolute;
+  left: 50px;
+  bottom: 10px;
+  min-width: 200px;
+  border: 1px #000000 solid;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 12px;
+  color: #000000;
+  font-size: 14px;
+  z-index: 1;
+}
