@@ -1,62 +1,68 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('facture') }}
+{% endblock %}
 
-{% block title %}Product{% endblock %}
+{% block title %}Product
+{% endblock %}
 
 {% block body %}
-    <h1>Product</h1>
+	<div class="tete">
+		<a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Mon profil</a>
+		<a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Mes paramètres de compte</a>
+		<a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Mes commandes</a>
+		<a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Mes factures</a>
+		<a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Mes listes</a>
+	</div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ product.id }}</td>
-            </tr>
-            <tr>
-                <th>Brand</th>
-                <td>{{ product.brand }}</td>
-            </tr>
-            <tr>
-                <th>Modele</th>
-                <td>{{ product.modele }}</td>
-            </tr>
-            <tr>
-                <th>Price</th>
-                <td>{{ product.price }}</td>
-            </tr>
-            <tr>
-                <th>Alimentation</th>
-                <td>{{ product.alimentation }}</td>
-            </tr>
-            <tr>
-                <th>Depth</th>
-                <td>{{ product.depth }}</td>
-            </tr>
-            <tr>
-                <th>Tilt</th>
-                <td>{{ product.tilt }}</td>
-            </tr>
-            <tr>
-                <th>Speed</th>
-                <td>{{ product.speed }}</td>
-            </tr>
-            <tr>
-                <th>Powerfull</th>
-                <td>{{ product.powerfull }}</td>
-            </tr>
-            <tr>
-                <th>Category</th>
-                <td>{{ product.category }}</td>
-            </tr>
-            <tr>
-                <th>Picture</th>
-                <td>{{ product.picture }}</td>
-            </tr>
-        </tbody>
-    </table>
+	<h1>Facture</h1>
 
-    <a href="{{ path('product_index') }}">back to list</a>
+	<div class="container">
+		<div class="div">
+			<div class="card mb-3" style="max-width: 540px;">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="{{product.picture}}" class="img-fluid rounded-start" alt="{{ product.brand }}">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<p class="card-text">{{ product.modele }}</p>
+							<p class="card-text">
+								<small class="text-muted">Last updated 3 mins ago</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <a href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
 
-    {{ include('product/_delete_form.html.twig') }}
+		<table class="table">
+			<div class="product">
+				<tbody>
+					<div class="un">
+						<tr>
+							<th>Unité</th>
+							<td>1</td>
+						</tr>
+					</div>
+					<div class="deux">
+						<tr>
+							<th>Quantité</th>
+							<td>1</td>
+						</tr>
+					</div>
+					<div class="trois">
+						<tr>
+							<th>Price</th>
+							<td>{{ product.price|number_format(2, '.',)}}€</td>
+						</tr>
+					</div>
+
+				</tbody>
+			</div>
+
+		</table>
+        <a href="">back to list</a>
+	</div>
 {% endblock %}
