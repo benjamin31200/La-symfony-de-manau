@@ -38,11 +38,12 @@ class SearchListController extends AbstractController
      */
     public function searchPrice(ProductRepository $productRepository, SearchListRepository $searchListRepository): Response
     {
-        $price = 60;
+        $price = 40;
+        $priceMax = 100;
         $searchList = new SearchList;
         $searchList = $searchListRepository->findAll();
         $products = new Product;
-        $products = $productRepository->findByPrice($price);
+        $products = $productRepository->findByPrice($price, $priceMax);
         return $this->render('search_list/search.html.twig', [
             'products' => $products,
             'searchList' => $searchList,
@@ -54,11 +55,12 @@ class SearchListController extends AbstractController
      */
     public function searchBrand(ProductRepository $productRepository, SearchListRepository $searchListRepository): Response
     {
-        $brand = 'Makita';
+        $brand = 'Bosch';
+        $category = 'scie sauteuse';
         $searchList = new SearchList;
         $searchList = $searchListRepository->findAll();
         $products = new Product;
-        $products = $productRepository->findByBrand($brand);
+        $products = $productRepository->findByBrand($brand, $category);
         return $this->render('search_list/search.html.twig', [
             'products' => $products,
             'searchList' => $searchList,
@@ -71,10 +73,11 @@ class SearchListController extends AbstractController
     public function searchAlim(ProductRepository $productRepository, SearchListRepository $searchListRepository): Response
     {
         $alim = 'Sans fil';
+        $category = 'scie sauteuse';
         $searchList = new SearchList;
         $searchList = $searchListRepository->findAll();
         $products = new Product;
-        $products = $productRepository->findByAlim($alim);
+        $products = $productRepository->findByAlim($alim, $category);
         return $this->render('search_list/search.html.twig', [
             'products' => $products,
             'searchList' => $searchList,
