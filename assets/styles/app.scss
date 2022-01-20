@@ -10,7 +10,7 @@
 
 .box{
   position: absolute;
-  top: 15%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
@@ -52,4 +52,12 @@ i{
 
 .nav-link {
   font-weight: 700;
+}
+
+.search__card {
+  box-shadow: 5px 5px 5px black;
+}
+
+.search__picture {
+  max-width: 200px;
 }

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mt-5">Tous les articles</h1>
+<div class="d-flex flex-wrap">
+{% for product in products %}
+<div class="search__card card mx-5 mt-5">
+<img src="{{ product.picture }}" alt="{{ product.modele }}" class="search__picture">
+                <h1>Marque</h1>
+                <p>{{ product.brand }}</p>
+
+                <h1>Modele</h1>
+                <p>{{ product.modele }}</p>
+
+                <h1>Prix</h1>
+                <p>{{ product.price }}</p>
+
+                <h1>Categorie</h1>
+                <p>{{ product.category }}</p>
+
+                <h1>Alimentation</h1>
+                <p>{{ product.alimentation }}</p>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
