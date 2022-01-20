@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
- * @Route("/cart", name="customer_cart_")
+ * @Route("/cart", name="cart_")
  */
 class CartController extends AbstractController
 {
@@ -40,7 +40,8 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/add/{id}", name="add", methods={"POST"})
+     * @Route("/add/{id}", name="add")
+     * @ParamConverter("Product", options={"mapping": {"id": "id"}})
      * @param SessionInterface $session
      * @param Product $product
      * @param CartManager $cartManager
@@ -69,12 +70,12 @@ class CartController extends AbstractController
         $session->set("cart", $cart);
 
 
-        return $this->redirectToRoute("index");
+        return $this->redirectToRoute("comparator_index");
     }
 
     /**
      * @Route("/addMore/{id}", name="addMore")
-     * @ParamConverter("product", options={"mapping": {"id": "id"}}) 
+     * @ParamConverter("Product", options={"mapping": {"id": "id"}}) 
      * @param Product $product
      * @return Response A response instance
      */

@@ -6,7 +6,7 @@
 {% block body %}
 	<h1>comparateur</h1>
 
-	<table class="table">
+	<table class="table" style = "margin-top: 5rem;">
 		<thead>
 			<tr>
 				<th>Image</th>
@@ -36,7 +36,7 @@
 					<td>{{ element.product.powerfull}}</td>
 					<td>{{ element.product.category }}</td>
 					<td>
-						<a href="{{ path('customer_cart_add', {'id': element.product.id}) }}">ajouter au panier</a>
+						<a href="{{ path('cart_add', {'id': element.product.id}) }}">ajouter au panier</a>
 
 						<a href="{{ path('comparator_delete', {'id': element.product.id}) }}">supprimer</a>
 					</td>
