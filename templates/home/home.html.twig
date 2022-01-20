@@ -208,10 +208,10 @@
 						<p class="card-description">{{product.price|number_format(2, '.',)}}€</p>
 					</div>
 					<div class="button" display>
-						<a href="">
+						<a href="{{ path('cart_add', {'id': product.id}) }}">
 							<button class="button button-basket"></button>
 						</a>
-						<a href="">
+						<a href="{{ path('comparator_add', {'id': product.id}) }}">
 							<span data-descr="Ajouter au comparateur">
 								<button class="button-comparator"></button>
 							</span>

@@ -7,7 +7,6 @@
   object-fit: cover;
   object-position: left;
   height: 6rem;
-  width: 6rem;
   background: white;
 }
 .action {
@@ -15,7 +14,7 @@
   flex-direction: column;
 }
 .line {
-  border-bottom: solid black 2px;
+  border-bottom: solid rgb(121, 149, 209) 2px;
 }
 .tr {
   border: solid rgb(134, 134, 134);

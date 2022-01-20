@@ -152,9 +152,10 @@ i {
 }
 
 .card-img-top {
+  object-fit: cover;
+  object-position: left;
   background-size: cover;
-  width: 25rem;
-  height: 18rem;
+  height: 25rem;
 }
 
 .card {
