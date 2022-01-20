@@ -32,7 +32,7 @@ class ComparatorController extends AbstractController
 
         $comparatorDatas = $comparatorManager->getDatasFromComparator($comparator);
         return $this->render('comparator/index.html.twig', [
-            'comparatorData' => $comparatorDatas['comparatorData'],
+            'comparatorData' => $comparatorDatas['Data'],
         ]);
     }
 
@@ -52,11 +52,12 @@ class ComparatorController extends AbstractController
         $comparator = $session->get("comparator", []);
         /** @var int $id */
         $id = $product->getId();
+        
         if (is_array($comparator)) {
             if (array_key_exists($id, $comparator)) {
-                $comparator[$id] = 1;
+                $comparator[$id] = $id;
             }else{
-                $comparator[$id] = 1;
+                $comparator[$id] = $id;
             }
         }
 
@@ -68,7 +69,7 @@ class ComparatorController extends AbstractController
 
     /**
      * @Route("/delete/{id}", name="delete")
-     * @ParamConverter("product", options={"mapping": {"id": "id"}})
+     * @ParamConverter("Product", options={"mapping": {"id": "id"}})
      * @param Product $product
      * @return Response A response instance
      */

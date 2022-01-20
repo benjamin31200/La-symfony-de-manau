@@ -24,6 +24,7 @@ class ComparatorManager
     public function getDatasFromComparator(array $comparator): array
     {
         $comparatorDatas = [];
+        
         foreach ($comparator as $productId) {
             /** @var Product $product */
             $product = $this->productRepository->find($productId);
@@ -32,7 +33,7 @@ class ComparatorManager
             ];
         }
         return [
-            'comparatorData' => $comparatorDatas,
+            'Data' => $comparatorDatas,
         ];
     }
 }
