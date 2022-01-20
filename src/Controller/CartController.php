@@ -33,7 +33,7 @@ class CartController extends AbstractController
         $cartDatas = $cartManager->getDatasFromCart($cart);
 
         $session->set('cartTotal', $cartDatas['total']);
-        return $this->render('cart/index.html.twig', [
+        return $this->render('/', [
             'dataCart' => $cartDatas['data'],
             'total' => $cartDatas['total'],
         ]);
@@ -70,7 +70,7 @@ class CartController extends AbstractController
         $session->set("cart", $cart);
 
 
-        return $this->redirectToRoute("cart_index");
+        return $this->redirectToRoute("/");
     }
 
     /**
@@ -93,7 +93,7 @@ class CartController extends AbstractController
             }
             $session->set("cart", $cart);
         }
-        return $this->redirectToRoute("index", []);
+        return $this->redirectToRoute("/", []);
     }
 
     /**
@@ -117,7 +117,7 @@ class CartController extends AbstractController
             }
             $session->set("cart", $cart);
         }
-        return $this->redirectToRoute("index", []);
+        return $this->redirectToRoute("/", []);
     }
 
     /**
@@ -137,6 +137,6 @@ class CartController extends AbstractController
             }
             $session->set("cart", $cart);
         }
-        return $this->redirectToRoute("index");
+        return $this->redirectToRoute("/");
     }
 }

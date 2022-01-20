@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SearchList{% endblock %}
+
+{% block body %}
+    <h1>Edit SearchList</h1>
+
+    {{ include('search_list/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('search_list_index') }}">back to list</a>
+
+    {{ include('search_list/_delete_form.html.twig') }}
+{% endblock %}

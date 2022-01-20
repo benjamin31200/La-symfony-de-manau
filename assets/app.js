@@ -11,3 +11,5 @@ import './styles/app';
 
 // start the Stimulus application
 import './bootstrap';
+
+require('bootstrap')

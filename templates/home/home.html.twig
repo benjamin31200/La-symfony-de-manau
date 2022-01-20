@@ -189,8 +189,60 @@
 		</div>
 		<div class="navigation">
 			<ul>
-				<li><a href="#"><span class="icon"><i class="fa fa-shopping-basket" aria-hidden="true"></i></span><span class="icon"></span></a></li>
-				<li><a href="#"><span class="icon"><i class="fa fa-balance-scale" aria-hidden="true"></i></span><span class="icon"></span></a></li>
+				<li>
+					<a href="#">
+						<span class="icon">
+							<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+						</span>
+						<span class="icon"></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="icon">
+							<i class="fa fa-balance-scale" aria-hidden="true"></i>
+						</span>
+						<span class="icon"></span>
+					</a>
+				</li>
+				<li>
+					<div class="example-wrapper">
+						<div class="cart">
+							<div class="cart__content">
+								{% for element in dataCart %}
+									<div class="productInCart">
+										<div class="product__informations">
+											<div class="up">
+												<div class="product__delete"></div>
+												<div class="product__model">{{ element.product.modele }}</div>
+											</div>
+											<div class="middle">
+												<div>{{ element.product.price|number_format(2) }}€</div>
+											</div>
+										</div>
+										<div class="choice">
+											<div class="product__actions"></div>
+											<div class="total__product">{{ element.totalproduct|number_format(2) }}€</div>
+										</div>
+									</div>
+									<hr>
+								{% else %}
+									<div class="empty__cart">
+										<h2>Votre panier est vide</h2>
+									</div>
+								{% endfor %}
+							</div>
+							{% if total > 0 %}
+								<div class="cart__action">
+									<div class="total__total">
+										<h2>Total:
+											{{ total|number_format(2) }}€</h2>
+									</div>
+								</div>
+							{% endif %}
+						</div>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</section>
