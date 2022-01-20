@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
- * @Route("/", name="cart_")
+ * @Route("/cart", name="cart_")
  */
 class CartController extends AbstractController
 {
@@ -33,7 +33,7 @@ class CartController extends AbstractController
         $cartDatas = $cartManager->getDatasFromCart($cart);
 
         $session->set('cartTotal', $cartDatas['total']);
-        return $this->render('home/home.html.twig', [
+        return $this->render('cart/index.html.twig', [
             'dataCart' => $cartDatas['data'],
             'products' => $productRepository->findAll(),
             'total' => $cartDatas['total'],
@@ -51,7 +51,8 @@ class CartController extends AbstractController
     public function add(
         Product $product,
         SessionInterface $session,
-        CartManager $cartManager
+        CartManager $cartManager,
+        ProductRepository $productRepository
     ): Response {
         /** @var array $cart */
         $cart = $session->get("cart", []);
@@ -71,7 +72,7 @@ class CartController extends AbstractController
         $session->set("cart", $cart);
 
 
-        return $this->redirectToRoute("cart_index");
+        return $this->redirectToRoute("home_index");
     }
 
     /**
