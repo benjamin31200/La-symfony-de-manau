@@ -3,20 +3,45 @@
   width: 90%;
   background-color: rgb(212, 232, 255);
 }
-.card-img-top {
+img {
   object-fit: cover;
   object-position: left;
-  height: 6rem;
+  height: 8rem;
+  width: 8rem;
   background: white;
 }
 .action {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  height: 8rem;
+  border: none;
 }
 .line {
   border-bottom: solid rgb(121, 149, 209) 2px;
+  justify-content: center;
+ 
 }
 .tr {
   border: solid rgb(134, 134, 134);
-
+}
+.ajout {
+  object-fit: initial;
+  object-position: none;
+  height: 5rem;
+  width: 4rem;
+  background: none;
+}
+p {
+  margin: 3rem auto auto auto;
+}
+.delete {
+  color: red;
+  font-size: 2rem;
+  text-decoration: none;
+  margin: auto;
+}
+.empty{
+  text-align: center;
+  font-size: 2rem;
 }
