@@ -1,7 +1,6 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-
 	<div class="Category_bradcrumbContainer__grwyN">
 		<ul class="root_4df1dd45 Category_breadcrumb__h6MWL">
 			<li class="item_4df1dd45">
@@ -34,8 +33,10 @@
 			</li>
 		</ul>
 	</div>
-	<section class="homepage">
-		<section class="leftSidebar">
+	<div class="main">
+		<div class="filters">
+
+
 			<div class="FiltersPanel_body__xz9Wj">
 				<div data-testid="accordion" class="root_0d92d2ad flat_0d92d2ad disabled_0d92d2ad ActiveFilters_root__ayNdi">
 					<div class="header_0d92d2ad" data-testid="accordionHeader" role="button" aria-expanded="false" aria-controls="section-activeFilters" id="label-activeFilters" tabindex="-1">
@@ -50,17 +51,6 @@
 					</div>
 					<div class="content_0d92d2ad transition_0d92d2ad" role="region" aria-labelledby="label-activeFilters" id="section-activeFilters" data-testid="accordionContent" style="height: 0px;">
 						<div class="body_0d92d2ad"></div>
-					</div>
-				</div>
-				<div class="select">
-					<label class="wrapper" for="states">Trier par:</label>
-					<div class="button dropdown">
-						<select id="colorselector">
-							<option value="red">Pertinence</option>
-							<option value="yellow">Prix croissant</option>
-							<option value="blue">Prix décroissant</option>
-							<option value="blue">Notes</option>
-						</select>
 					</div>
 				</div>
 			</div>
@@ -86,13 +76,16 @@
 							<div class="RangeSelect_inputs__gHCGs">
 								<div class="RangeSelect_min__Y8B9B container_90f49d77">
 									<div class="content_90f49d77">
-										<div class="wrapper_90f49d77"><input id="minPrices.per_item.actual_price.with_vat.as_float" class="input_90f49d77" type="number" name="min" pattern="[0-9]*" min="2.74" max="7496" value="3"><label for="minPrices.per_item.actual_price.with_vat.as_float" class="label_90f49d77 on_90f49d77">Minimum</label>
+										<div class="wrapper_90f49d77"><input id="minPrices.per_item.actual_price.with_vat.as_float" class="input_90f49d77" type="number" name="min" pattern="[0-9]*" min="2.74" max="7496" value="3" style="width: 5rem;"><label for="minPrices.per_item.actual_price.with_vat.as_float" class="label_90f49d77 on_90f49d77">Minimum</label>
+
 										</div>
 									</div>
 								</div>
 								<div class="RangeSelect_max__FBhYq container_90f49d77">
 									<div class="content_90f49d77">
-										<div class="wrapper_90f49d77"><input id="maxPrices.per_item.actual_price.with_vat.as_float" class="input_90f49d77" type="number" name="max" pattern="[0-9]*" min="3" max="7496.86" value="7496"><label for="maxPrices.per_item.actual_price.with_vat.as_float" class="label_90f49d77 on_90f49d77">Maximum</label>
+
+										<div class="wrapper_90f49d77"><input id="maxPrices.per_item.actual_price.with_vat.as_float" class="input_90f49d77" type="number" name="max" pattern="[0-9]*" min="3" max="7496.86" value="7496" style="width: 5rem;"><label for="maxPrices.per_item.actual_price.with_vat.as_float" class="label_90f49d77 on_90f49d77">Maximum</label>
+
 										</div>
 									</div>
 								</div>
@@ -134,6 +127,7 @@
 						<use href="#iconsSystemArrowDown"></use>
 					</svg>
 				</div>
+
 				<div class="checkbox_741b4773 InlineFilter_root__6dBss InlineFilter_disabled__LfZe6 FiltersPanel_filter__Y02l7"><input class="input_741b4773" type="checkbox" id="is_eco_responsible" disabled="" value="false"><label class="label_741b4773" for="is_eco_responsible">
 						<div class="InlineFilter_icon__BLxmM">
 							<svg aria-hidden="true" focusable="false" height="1em" role="presentation" width="1em" viewbox="-2 -2 24 24" class="svg_9c8206b6">
@@ -160,11 +154,12 @@
 					</label>
 				</div>
 			</div>
-		</section>
-		<div class="container">
+		</div>
+		<div class="container" style="max-width: 1150px;">
 			<div class="row row-cols-2">
 				{% for product in products %}
 					<div class="card" style="max-width: 400px;background-color: white ; margin: 1rem 1rem 1rem 1rem;">
+
 						<img src="{{product.picture}}" class="card-img-top" alt="{{product.modele}}">
 						<div class="col-md-15" style=" width: 100% ; background-color: white ;">
 							<div class="card-body" style=" width: 100% ; background-color: white ;">
@@ -187,20 +182,13 @@
 				{% endfor %}
 			</div>
 		</div>
+
 		<div class="navigation">
 			<ul>
 				<li>
 					<a href="#">
 						<span class="icon">
 							<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-						</span>
-						<span class="icon"></span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class="icon">
-							<i class="fa fa-balance-scale" aria-hidden="true"></i>
 						</span>
 						<span class="icon"></span>
 					</a>
@@ -260,5 +248,5 @@
 				</li>
 			</ul>
 		</div>
-	</section>
-{% endblock %}
+	</div>
+</div>{% endblock %}

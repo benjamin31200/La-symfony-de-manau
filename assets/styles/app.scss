@@ -1,12 +1,23 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 .topnav a:hover {
   border-bottom: 3px solid red;
 }
-
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.filters {
+  width: 15rem;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .bg-warning {
   background-color: rgb(255, 255, 255) !important;
   height: 5rem;
@@ -245,10 +256,7 @@ margin: 0.5rem;
   height: 25rem;
 }
 
-.card {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  width: 30rem;
-}
+
 
 .button-comparator {
   background: url(https://edinwomensaid.co.uk/wp-content/uploads/2016/03/scales-240x240.png);
@@ -268,8 +276,8 @@ margin: 0.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-border-radius: 0;
-border: none;
+  border-radius: 0;
+  border: none;
 }
 
 .leftSidebar {
@@ -279,7 +287,7 @@ border: none;
 span[data-descr] {
   position: relative;
   text-decoration: underline;
-  color: #00F;
+  color: #00f;
   cursor: help;
 }
 
@@ -296,4 +304,18 @@ span[data-descr]:hover::after {
   color: #000000;
   font-size: 14px;
   z-index: 1;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  .card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 23rem;
+  margin: 0.5rem;
+}
+.row {
+  width: 1130px;
+ }
+ 
 }
