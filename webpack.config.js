@@ -33,6 +33,7 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
+    .addStyleEntry('facture', './assets/styles/facture.scss')
     .addStyleEntry('comparator', './assets/styles/comparator.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

@@ -1,0 +1,20 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: white;
+}
+
+.contain{
+    display: flex;
+    flex-direction: row;
+}
+
+.tete {
+    text-align: center;
+    text-decoration: lightseagreen;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+h1 {
+    text-align: center;
+}
