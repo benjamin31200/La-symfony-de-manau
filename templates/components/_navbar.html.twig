@@ -1,31 +1,32 @@
-        <div class="box">
-        <form name="search">
-            <input type="text" class="input" name="txt" 
-            onmouseout="document.search.txt.value = ''">
-        </form>
-            <i class="fas fa-search"></i>
-    </div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-        <a class="navbar-brand" href="/"><img src="https://www.sdbpro.fr/wp-content/uploads/2018/09/Logo-ManoMano.jpg.webp" alt="ManoMano" style= "height:70px; width:auto;"></a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto topnav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path("comparator_index") }}">Mon comparateur</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path("cart_index") }}">Panier</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-primary text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Sign In</a>                  
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-danger text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Register</a>
-                </li>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+	<a class="navbar-brand" href="/"><img src="https://www.sdbpro.fr/wp-content/uploads/2018/09/Logo-ManoMano.jpg.webp" alt="ManoMano" style="height:70px; width:auto;"></a>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto topnav">
+			<div class="box">
+				<form name="search">
+					<input type="text" class="input" name="txt" style="margin: 4rem auto auto auto;" onmouseout="document.search.txt.value = ''">
+					<i class="fas fa-search"style="margin: 2rem auto auto auto;"></i>
+				</form>
 
-    </nav>
-</div>
+			</div>
+			<li class="nav-item active">
+				<a class="nav-link" href="/">Home
+					<span class="sr-only">(current)</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path("comparator_index") }}">Mon comparateur</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path("cart_index") }}">Panier</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link btn btn-primary text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Sign In</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link btn btn-danger text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Register</a>
+			</li>
+		</ul>
+	</div>
+
+</nav>
