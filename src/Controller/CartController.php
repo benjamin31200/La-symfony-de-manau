@@ -94,7 +94,7 @@ class CartController extends AbstractController
             }
             $session->set("cart", $cart);
         }
-        return $this->redirectToRoute("index", []);
+        return $this->redirectToRoute("cart_index", []);
     }
 
     /**
@@ -118,7 +118,7 @@ class CartController extends AbstractController
             }
             $session->set("cart", $cart);
         }
-        return $this->redirectToRoute("index", []);
+        return $this->redirectToRoute("cart_index", []);
     }
 
     /**
@@ -138,6 +138,6 @@ class CartController extends AbstractController
             }
             $session->set("cart", $cart);
         }
-        return $this->redirectToRoute("index");
+        return $this->redirectToRoute("cart_index");
     }
 }
