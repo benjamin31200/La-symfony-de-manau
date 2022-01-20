@@ -70,7 +70,7 @@ class CartController extends AbstractController
         $session->set("cart", $cart);
 
 
-        return $this->redirectToRoute("comparator_index");
+        return $this->redirectToRoute("cart_index");
     }
 
     /**

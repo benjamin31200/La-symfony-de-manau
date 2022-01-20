@@ -1,4 +1,7 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('comparator') }}
+{% endblock %}
 
 {% block title %}Comparateur
 {% endblock %}
@@ -6,8 +9,8 @@
 {% block body %}
 	<h1>comparateur</h1>
 
-	<table class="table" style = "margin-top: 5rem;">
-		<thead>
+	<table class="table">
+		<thead class ="tr">
 			<tr>
 				<th>Image</th>
 				<th>Marque</th>
@@ -19,28 +22,30 @@
 				<th>Vitesse</th>
 				<th>Puissance</th>
 				<th>Category</th>
-                <th>Action</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
-			{% for element in comparatorData %}
-				<tr>
-					<td>{{ element.product.picture }}</td>
+			{% for element in comparatorData|sort((a, z) => a.product.category <=> z.product.category) %}
+				<tr class="line">
+					<td><img src="{{ element.product.picture }}" class="card-img-top" alt="{{element.product.modele}}"></td>
 					<td>{{ element.product.brand }}</td>
 					<td>{{ element.product.modele }}</td>
-					<td>{{ element.product.price }}</td>
+					<td>{{ element.product.price }}€</td>
 					<td>{{ element.product.alimentation }}</td>
-					<td>{{ element.product.depth }}</td>
-					<td>{{ element.product.tilt }}</td>
-					<td>{{ element.product.speed }}</td>
-					<td>{{ element.product.powerfull}}</td>
+					<td>{{ element.product.depth }}mm</td>
+					<td>{{ element.product.tilt }}°</td>
+					<td>{{ element.product.speed }}tr/mn</td>
+					<td>{{ element.product.powerfull}}W</td>
 					<td>{{ element.product.category }}</td>
-					<td>
+					<td class="action">
 						<a href="{{ path('cart_add', {'id': element.product.id}) }}">ajouter au panier</a>
 
 						<a href="{{ path('comparator_delete', {'id': element.product.id}) }}">supprimer</a>
 					</td>
+
 				</tr>
+
 			{% else %}
 				<tr>
 					<td colspan="11">aucun produit dans le comparateur</td>

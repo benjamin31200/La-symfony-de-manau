@@ -199,24 +199,26 @@
 <div class="container">
 	<div class="row row-cols-2">
 		{% for product in products %}
-
-			<div class="col" style="max-width: 400px;background-color: white ; margin: 1rem 1rem 1rem 1rem;">
-				<img src="{{product.picture}}" class="card-img-top" alt="{{product.modele}}" style="
-										    object-fit: cover;
-										    object-position: left;
-										    height: 30rem;
-											background: white;
-					
-										">
-				<div class="col-md-8" style=" width: 100% ; background-color: white ;">
+			<div class="card" style="max-width: 400px;background-color: white ; margin: 1rem 1rem 1rem 1rem;">
+				<img src="{{product.picture}}" class="card-img-top" alt="{{product.modele}}">
+				<div class="col-md-15" style=" width: 100% ; background-color: white ;">
 					<div class="card-body" style=" width: 100% ; background-color: white ;">
 						<h5 class="card-title">{{product.modele}}</h5>
 						<p class="card-text">{{product.brand}}</p>
 						<p class="card-description">{{product.price|number_format(2, '.',)}}€</p>
 					</div>
+					<div class="button" display>
+						<a href="{{ path('cart_add', {'id': product.id}) }}">
+							<button class="button button-basket"></button>
+						</a>
+						<a href="{{ path('comparator_add', {'id': product.id}) }}">
+							<span data-descr="Ajouter au comparateur">
+								<button class="button-comparator"></button>
+							</span>
+						</a>
+					</div>
 				</div>
 			</div>
-
 		{% endfor %}
 	</div>
 </div>{% endblock %}

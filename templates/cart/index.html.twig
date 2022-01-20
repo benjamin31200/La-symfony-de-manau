@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Panier
+{% endblock %}
+
+{# {% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('customer_cart') }}
+{% endblock %} #}
+
+{% block body %}
+	<div class="example-wrapper">
+		<div class="title">
+			<h1>Panier</h1>
+		</div>
+		<div class="cart">
+			<div class="cart__content">
+				{% for element in dataCart %}
+					<div class="productInCart">
+						<div class="product__informations">
+							<div class="up">
+								<div class="product__delete">
+									{# <a href="{{ path("cart_delete", {'id': element.product.id, 'whitemark': website.slug}) }}">
+										<i class="product__delete">x</i>
+									</a> #}
+								</div>
+								<div class="product__model">{{ element.product.modele }}</div>
+							</div>
+							<div class="middle">
+								<div>{{ element.product.price|number_format(2) }}€</div>
+							</div>
+						</div>
+						<div class="choice">
+							<div class="product__actions">
+								{# <a href="{{ path("whitemark_customer_cart_remove", {'id': element.product.id, 'whitemark': website.slug}) }}" class="btn btn-outline-info">
+									<i class="bi bi-cart-dash">-</i>
+								</a>
+								<div class="quantity">{{ element.quantity }}</div>
+								<a href="{{ path("whitemark_customer_cart_addMore", {'id': element.product.id, 'whitemark': website.slug}) }}" class="btn btn-outline-info">
+									<i class="bi bi-cart_success">+</i>
+								</a> #}
+							</div>
+							<div class="total__product">{{ element.totalproduct|number_format(2) }}€</div>
+						</div>
+					</div>
+					<hr>
+				{% else %}
+					<div class="empty__cart">
+						<h2>Votre panier est vide</h2>
+					</div>
+				{% endfor %}
+			</div>
+			{% if total > 0 %}
+				<div class="cart__action">
+					<div class="total__total">
+						<h2>Total:
+							{{ total|number_format(2) }}€</h2>
+					</div>
+					{# <div class="action__total">
+						<div>
+							<a class="button__delete" href="{{ path("whitemark_customer_cart_article_delete_all", {'whitemark': website.slug}) }}">Vider le Panier</a>
+						</div>
+						<div>
+							<a class="button" href="{{ path("whitemark_customer_order_basket", {'whitemark': website.slug}) }}">Valider le Panier</a>
+						</div>
+					</div> #}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

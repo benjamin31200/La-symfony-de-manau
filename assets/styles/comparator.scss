@@ -1,0 +1,22 @@
+.table {
+  margin: 5rem auto auto auto;
+  width: 90%;
+  background-color: rgb(212, 232, 255);
+}
+.card-img-top {
+  object-fit: cover;
+  object-position: left;
+  height: 6rem;
+  background: white;
+}
+.action {
+  display: flex;
+  flex-direction: column;
+}
+.line {
+  border-bottom: solid rgb(121, 149, 209) 2px;
+}
+.tr {
+  border: solid rgb(134, 134, 134);
+
+}
