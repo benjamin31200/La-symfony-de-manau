@@ -6,6 +6,7 @@ use App\Entity\Product;
 use App\Entity\SearchList;
 use App\Form\SearchListType;
 use App\Repository\ProductRepository;
+use App\Repository\SearchListRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,53 +21,63 @@ class SearchListController extends AbstractController
     /**
      * @Route("/", name="index", methods={"GET"})
      */
-    public function index(ProductRepository $productRepository): Response
+    public function index(ProductRepository $productRepository, SearchListRepository $searchListRepository): Response
     {
+        $searchList = new SearchList;
+        $searchList = $searchListRepository->findAll();
         $products = new Product;
         $products = $productRepository->findAll();
         return $this->render('search_list/index.html.twig', [
             'products' => $products,
+            'searchList' => $searchList,
         ]);
     }
 
     /**
      * @Route("/price", name="price", methods={"GET"})
      */
-    public function searchPrice(ProductRepository $productRepository): Response
+    public function searchPrice(ProductRepository $productRepository, SearchListRepository $searchListRepository): Response
     {
+        $price = 60;
+        $searchList = new SearchList;
+        $searchList = $searchListRepository->findAll();
         $products = new Product;
-        $products = $productRepository->findBy(
-            ['price' => '49'],
-        );
+        $products = $productRepository->findByPrice($price);
         return $this->render('search_list/search.html.twig', [
             'products' => $products,
+            'searchList' => $searchList,
         ]);
     }
 
     /**
      * @Route("/brand", name="brand", methods={"GET"})
      */
-    public function searchBrand(ProductRepository $productRepository): Response
+    public function searchBrand(ProductRepository $productRepository, SearchListRepository $searchListRepository): Response
     {
+        $brand = 'Makita';
+        $searchList = new SearchList;
+        $searchList = $searchListRepository->findAll();
         $products = new Product;
-        $products = $productRepository->findBy(
-            ['brand' => 'makita']
-        );
+        $products = $productRepository->findByBrand($brand);
         return $this->render('search_list/search.html.twig', [
             'products' => $products,
+            'searchList' => $searchList,
         ]);
     }
 
     /**
      * @Route("/alim", name="alim", methods={"GET"})
      */
-    public function searchAlim(ProductRepository $productRepository): Response
+    public function searchAlim(ProductRepository $productRepository, SearchListRepository $searchListRepository): Response
     {
+        $alim = 'Sans fil';
+        $searchList = new SearchList;
+        $searchList = $searchListRepository->findAll();
         $products = new Product;
-        $products = $productRepository->findBy(
-            ['alimentation' => 'Sans fil']
-        );        return $this->render('search_list/search.html.twig', [
+        $products = $productRepository->findByAlim($alim);
+        return $this->render('search_list/search.html.twig', [
             'products' => $products,
+            'searchList' => $searchList,
         ]);
     }
 

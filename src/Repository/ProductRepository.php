@@ -19,6 +19,42 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
+    public function findByPrice($price)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.price < :val')
+            ->setParameter('val', $price)
+            ->orderBy('p.id', 'ASC')
+            ->setMaxResults(100)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findByAlim($alim)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.alimentation = :val')
+            ->setParameter('val', $alim)
+            ->orderBy('p.id', 'ASC')
+            ->setMaxResults(100)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findByBrand($brand)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.brand = :val')
+            ->setParameter('val', $brand)
+            ->orderBy('p.id', 'ASC')
+            ->setMaxResults(100)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */
