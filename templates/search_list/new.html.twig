@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}Création recherche favorite{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mt-5">Nouvelle recherche favorite</h1>
+<div class="mx-auto text-center w-25 mt-5">
+    {{ include('search_list/_form.html.twig') }}
+</div>
+
+    <a href="{{ path('search_index') }}">back to list</a>
+{% endblock %}

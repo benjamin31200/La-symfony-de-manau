@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+<div class="text-center mt-5">
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Recherche Favorites
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/search">Annuler la recherche</a>
+{% for search in searchList %}
+    <a class="dropdown-item" href="/search/{{ search.title }}">{{ search.name }}</a>
+{% endfor %}
+    <a class="dropdown-item" href="/search/new">Nouvelle recherche favorite</a>
+</div>
+</div>
+</div>
+    <h1 class="text-center mt-5">Articles recherchés</h1>
+<div class="container-fluid col-12 mx-5">
+	<div class="row row-cols-2">
+		{% for product in products %}
+
+			<div class="col" style="max-width: 400px;background-color: white ; margin: 1rem 1rem 1rem 1rem;">
+				<img src="{{product.picture}}" class="card-img-top" alt="{{product.modele}}" style="
+										    object-fit: cover;
+										    object-position: left;
+										    height: 30rem;
+											background: white;
+										">
+				<div class="col-md-8" style=" width: 100% ; background-color: white ;">
+					<div class="card-body" style=" width: 100% ; background-color: white ;">
+						<h5 class="card-title">{{product.modele}}</h5>
+						<p class="card-text">{{product.brand}}</p>
+						<p class="card-description">{{product.price|number_format(2, '.',)}}€</p>
+					</div>
+				</div>
+			</div>
+
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
