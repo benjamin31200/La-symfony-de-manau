@@ -1,12 +1,22 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 .topnav a:hover {
   border-bottom: 3px solid red;
 }
-
+.main {
+  display: flex;
+  flex-direction: row;
+}
+.filters {
+  width: 15rem;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .bg-warning {
   background-color: rgb(255, 255, 255) !important;
   height: 5rem;
@@ -164,7 +174,8 @@ i {
 
 .card {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  width: 30rem;
+  width: 23rem;
+  margin: 0.5rem;
 }
 
 .button-comparator {
@@ -185,14 +196,14 @@ i {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-border-radius: 0;
-border: none;
+  border-radius: 0;
+  border: none;
 }
 
 span[data-descr] {
   position: relative;
   text-decoration: underline;
-  color: #00F;
+  color: #00f;
   cursor: help;
 }
 
