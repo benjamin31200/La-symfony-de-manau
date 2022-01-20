@@ -9,7 +9,7 @@
     Recherche Favorites
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="/search">Annuler la recherche</a>
+    <a class="dropdown-item" href="/">Annuler la recherche</a>
 {% for search in searchList %}
     <a class="dropdown-item" href="/search/{{ search.title }}">{{ search.name }}</a>
 {% endfor %}

@@ -97,7 +97,7 @@ class SearchListController extends AbstractController
             $entityManager->persist($searchList);
             $entityManager->flush();
 
-            return $this->redirectToRoute('search_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('product_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('search_list/new.html.twig', [
