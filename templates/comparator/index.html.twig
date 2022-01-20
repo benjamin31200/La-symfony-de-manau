@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Episode index
+{% endblock %}
+
+{% block body %}
+	<h1>comparateur</h1>
+
+	<table class="table" style="color:white;">
+		<thead>
+			<tr>
+				<th>Image</th>
+				<th>Marque</th>
+				<th>Modele</th>
+				<th>Prix</th>
+				<th>Alimentation</th>
+				<th>Profondeur</th>
+				<th>Inclinaison</th>
+				<th>Vitesse</th>
+				<th>Puissance</th>
+				<th>Category</th>
+                <th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for product in Products %}
+				<tr>
+					<td>{{ product.picture }}</td>
+					<td>{{ product.brand }}</td>
+					<td>{{ product.modele }}</td>
+					<td>{{ product.price }}</td>
+					<td>{{ product.alimentation }}</td>
+					<td>{{ product.depth }}</td>
+					<td>{{ product.tilt }}</td>
+					<td>{{ product.speed }}</td>
+					<td>{{ product.powerfull}}</td>
+					<td>{{ product.category }}</td>
+					<td>
+						<a href="{{ path('customer_cart_add', {'id': product.id}) }}">ajouter au panier</a>
+
+						<a href="{{ path('comparator_delete', {'id': product.id}) }}">supprimer</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">aucun produit dans le comparateur</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
