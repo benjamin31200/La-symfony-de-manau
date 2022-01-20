@@ -3,3 +3,135 @@
 body {
     background-color: lightgray;
 }
+.topnav a:hover {
+  border-bottom: 3px solid red;
+}
+
+.bg-warning {
+  background-color: rgb(255, 255, 255) !important;
+  height: 5rem;
+  border-bottom: 2px solid black;
+}
+
+.box {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.input {
+  background: none;
+  border: 2px solid #000000;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-family: Comic Sans MS;
+  font-size: 20px;
+  color: #000000;
+  outline: none;
+  transition: 0.5s;
+}
+
+.fa-search {
+  color: black;
+  font-size: 1.3rem;
+}
+
+.box:hover input {
+  width: 350px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translate(-50%, -50%);
+  font-size: 26px;
+  color: #000000;
+  transition: 0.2s;
+}
+.box:hover i {
+  opacity: 0;
+  z-index: -1;
+}
+
+.nav-link {
+  font-weight: 700;
+}
+
+.root_4df1dd45 {
+  margin-top: 3.5rem;
+  list-style-type: none;
+  display: flex;
+}
+
+.root_0d92d2ad.flat_0d92d2ad.disabled_0d92d2ad.ActiveFilters_root__ayNdi {
+  font-size: 14px;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  font-family: Open Sans, mm-main, arial, sans-serif;
+  background-color: #fff;
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 4px;
+  pointer-events: none;
+  margin-top: 8px;
+}
+
+.header_0d92d2ad {
+  font-family: Open Sans, mm-main, arial, sans-serif;
+  pointer-events: none;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  justify-content: space-between;
+  color: #505971;
+}
+
+.checkbox_741b4773.InlineFilter_root__6dBss {
+  font-family: Open Sans, mm-main, arial, sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #0c193a;
+  background-color: #fff;
+}
+
+.checkbox_741b4773 {
+  position: relative;
+  left: 1rem;
+  top: 0.2rem;
+}
+
+.InlineFilter_icon__BLxmM {
+  position: relative;
+  top: 1rem;
+  left: 0.5rem;
+}
+
+.InlineFilter_label__hEdkh {
+  position: relative;
+  left: 1.9rem;
+  bottom: 0.4rem;
+}
+
+.root_0d92d2ad.open_0d92d2ad.flat_0d92d2ad.FiltersPanel_filter__Y02l7 {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.2rem;
+}
+
+.select {
+  display: flex;
+}
