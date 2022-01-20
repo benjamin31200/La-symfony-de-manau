@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SearchList{% endblock %}
+
+{% block body %}
+    <h1>SearchList</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ search_list.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ search_list.title }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ search_list.marque }}</td>
+            </tr>
+            <tr>
+                <th>Min_price</th>
+                <td>{{ search_list.minPrice }}</td>
+            </tr>
+            <tr>
+                <th>Max_price</th>
+                <td>{{ search_list.maxPrice }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ search_list.category }}</td>
+            </tr>
+            <tr>
+                <th>Alimentation</th>
+                <td>{{ search_list.alimentation }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% for product in products %}
+<h1>{{product.brand}}</h1>
+
+    <h2>{{product.modele}}</h2>
+    <p>{{product.price}} €</p>
+{% endfor %}
+{% endblock %}
