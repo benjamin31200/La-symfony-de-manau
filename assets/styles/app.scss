@@ -1,3 +1,55 @@
-body {
-    background-color: lightgray;
+.topnav a:hover {
+  border-bottom: 3px solid red;
+}
+
+.bg-warning {
+  background-color: rgb(255, 255, 255) !important;
+  height: 5rem;
+  border-bottom: 2px solid black;
+}
+
+.box{
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.input {
+  background: none;
+  border: 2px solid #000000;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-family: Comic Sans MS;
+  font-size: 26px;
+  color: #000000;
+  outline: none;
+  transition: .5s;
+}
+
+.fa-search {
+color: black;
+font-size: 1.3rem;
+}
+
+.box:hover input{
+  width: 350px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+i{
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translate(-50%,-50%);
+  font-size: 26px;
+  color: #000000;
+  transition: .2s;
+}
+.box:hover i{
+  opacity: 0;
+  z-index: -1;
+}
+
+.nav-link {
+  font-weight: 700;
 }
