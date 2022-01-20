@@ -27,12 +27,12 @@ class ComparatorManager
         foreach ($comparator as $productId) {
             /** @var Product $product */
             $product = $this->productRepository->find($productId);
-            $dataComparator[] = [
+            $comparatorDatas[] = [
                 'product' => $product,
             ];
         }
         return [
-            'dataComparator' => $comparatorDatas,
+            'comparatorData' => $comparatorDatas,
         ];
     }
 }

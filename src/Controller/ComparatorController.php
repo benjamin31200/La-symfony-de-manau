@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Product;
 
 
-use App\Service\comparatorManager;
+use App\Service\ComparatorManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
- * @Route("/comparator", name="comparator_comparator_")
+ * @Route("/comparator", name="comparator_")
  */
 class ComparatorController extends AbstractController
 {
@@ -32,12 +32,13 @@ class ComparatorController extends AbstractController
 
         $comparatorDatas = $comparatorManager->getDatasFromComparator($comparator);
         return $this->render('comparator/index.html.twig', [
-            'dataComparator' => $comparatorDatas['data'],
+            'comparatorData' => $comparatorDatas['comparatorData'],
         ]);
     }
 
     /**
-     * @Route("/add/{id}", name="add", methods={"POST"})
+     * @Route("/add/{id}", name="add")
+     * @ParamConverter("Product", options={"mapping": {"id": "id"}})
      * @param SessionInterface $session
      * @param Product $product
      * @param ComparatorManager $comparatorManager
@@ -54,17 +55,19 @@ class ComparatorController extends AbstractController
         if (is_array($comparator)) {
             if (array_key_exists($id, $comparator)) {
                 $comparator[$id] = 1;
+            }else{
+                $comparator[$id] = 1;
             }
         }
 
         $session->set("comparator", $comparator);
 
 
-        return $this->redirectToRoute("index");
+        return $this->redirectToRoute("comparator_index");
     }
 
     /**
-     * @Route("/delete/{id}", name="article_delete")
+     * @Route("/delete/{id}", name="delete")
      * @ParamConverter("product", options={"mapping": {"id": "id"}})
      * @param Product $product
      * @return Response A response instance
@@ -81,6 +84,6 @@ class ComparatorController extends AbstractController
 
             $session->set("comparator", $comparator);
         }
-        return $this->redirectToRoute("index");
+        return $this->redirectToRoute("comparator_index");
     }
 }
