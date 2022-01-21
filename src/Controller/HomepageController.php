@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\SearchList;
 use App\Repository\ProductRepository;
+use App\Repository\SearchListRepository;
 use App\Service\CartManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,8 +19,11 @@ class HomepageController extends AbstractController
     public function index(
         ProductRepository $productRepository,
         SessionInterface $session,
-        CartManager $cartManager
+        CartManager $cartManager,
+        SearchListRepository $searchListRepository
     ): Response {
+        $searchList = new SearchList;
+        $searchList = $searchListRepository->findAll();
         /** @var array $cart */
         $cart = $session->get("cart", []);
 
@@ -29,6 +34,7 @@ class HomepageController extends AbstractController
             'dataCart' => $cartDatas['data'],
             'products' => $productRepository->findAll(),
             'total' => $cartDatas['total'],
+            'searchList' => $searchList,
         ]);
     }
 }

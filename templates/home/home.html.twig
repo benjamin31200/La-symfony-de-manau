@@ -3,6 +3,17 @@
 {% block body %}
 
 	<div class="Category_bradcrumbContainer__grwyN">
+	<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Recherche Favorites
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+{% for search in searchList %}
+    <a class="dropdown-item" href="/search/{{ search.title }}">{{ search.name }}</a>
+{% endfor %}
+    <a class="dropdown-item" href="/search/new">Nouvelle recherche favorite</a>
+</div>
+</div>
 		<ul class="root_4df1dd45 Category_breadcrumb__h6MWL">
 			<li class="item_4df1dd45">
 				<a class="root_594203a0 link_594203a0" href="/">Accueil</a>
