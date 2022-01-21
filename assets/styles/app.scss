@@ -87,7 +87,7 @@ i {
 
 .navigation {
   position: sticky;
-  width: 10rem;
+  width: 7rem;
   height: 100%;
   background: #fcfcfc;
   transition: 0.5s;
@@ -101,6 +101,10 @@ i {
   cursor: pointer;
 }
 
+.fa-shopping-basket::after {
+  content: "8";
+}
+
 .fa-balance-scale {
   margin-top: 3rem;
   cursor: pointer;
@@ -110,6 +114,40 @@ i {
   width: 10rem;
   height: 10rem;
   background-size: cover;
+  width: 6rem;
+  height: 6rem;
+  background-size: contain;
+  box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+}
+
+.quantity {
+  background-color: rgb(0 0 255);
+  width: 1.3rem;
+  display: flex;
+  justify-content: center;
+  color: rgb(255 255 255);
+  border-radius: 50%;
+  position: relative;
+  top: 0.7rem;
+  right: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.imgModal {
+  background: url(https://cdn.manomano.com/media/marketplace-promotion/desktop_c8f0bd15-39e8-47b5-adb4-3036e79ae703_u6pq.jpg?w=1144&h=353&fit=cover&format=webp);
+  background-size: contain;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  width: 38rem;
+    height: 12rem;
+    background-repeat: no-repeat;
+}
+
+.choice {
+  display: flex;
+  gap: 0.5rem;
+  position: relative;
 }
 
 .navigation ul {
@@ -118,7 +156,29 @@ i {
   left: 0;
   width: 100%;
   margin-top: 1.5rem;
-    margin-left: 1rem;
+}
+
+.total__product {
+  background-color: rgb(0 0 255);
+  border: 1px solid;
+  position: relative;
+  bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: rgb(255 255 255);
+  border-radius: 25px;
+  padding: 0.2rem;
+}
+
+.middle div {
+  background-color: rgb(0 0 255);
+  border: 1px solid;
+  position: relative;
+  bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: rgb(255 255 255);
+  border-radius: 25px;
+  padding: 0.2rem;
+  margin-left: -0.5rem;
 }
 
 .navigation ul li {
@@ -133,7 +193,7 @@ i {
   width: 100%;
   display: flex;
   text-decoration: none;
-  color: #fff
+  color: #fff;
 }
 
 .navigation:hover {
@@ -155,18 +215,18 @@ i {
 }
 
 .select {
-margin: 0.5rem;
+  margin: 0.5rem;
 }
 
 .header_0d92d2ad {
-   background-color: rgb(255 255 255);
-    margin-top: 0.5rem;
+  background-color: rgb(255 255 255);
+  margin-top: 0.5rem;
 }
 
 .root_0d92d2ad.open_0d92d2ad.flat_0d92d2ad.FiltersPanel_filter__Y02l7 {
   margin-top: 0.5rem;
-    background-color: rgb(255 255 255);
-    height: 8rem;
+  background-color: rgb(255 255 255);
+  height: 8rem;
 }
 
 .checkbox_741b4773 {
@@ -238,6 +298,12 @@ margin: 0.5rem;
   width: 10rem;
 }
 
+.card-body-modal {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
 .button-basket {
   background: url(https://t3.ftcdn.net/jpg/00/26/12/44/240_F_26124444_6ExT1DaHIGJZmIpnKJSv2GJID7QUio1e.jpg);
   background-size: cover;
@@ -249,14 +315,21 @@ margin: 0.5rem;
   justify-content: flex-end;
 }
 
+.button-basket-modal {
+  background: url(https://t3.ftcdn.net/jpg/00/26/12/44/240_F_26124444_6ExT1DaHIGJZmIpnKJSv2GJID7QUio1e.jpg);
+    background-size: cover;
+    width: 10rem;
+    height: 3.1rem;
+    bottom: 1.5rem;
+    position: relative;
+}
+
 .card-img-top {
   object-fit: cover;
   object-position: left;
   background-size: cover;
   height: 25rem;
 }
-
-
 
 .button-comparator {
   background: url(https://edinwomensaid.co.uk/wp-content/uploads/2016/03/scales-240x240.png);
@@ -265,6 +338,20 @@ margin: 0.5rem;
   height: 3rem;
   right: 1rem;
   bottom: 0.2rem;
+  position: relative;
+  cursor: pointer;
+  justify-content: flex-end;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.button-comparator-modal {
+  background: url(https://edinwomensaid.co.uk/wp-content/uploads/2016/03/scales-240x240.png);
+  background-size: contain;
+  width: 2rem;
+  height: 2rem;
+  right: 1rem;
+  bottom: 0.5rem;
   position: relative;
   cursor: pointer;
   justify-content: flex-end;
@@ -281,7 +368,7 @@ margin: 0.5rem;
 }
 
 .leftSidebar {
-  width: 22%;
+  width: 18%;
 }
 
 span[data-descr] {
@@ -289,6 +376,179 @@ span[data-descr] {
   text-decoration: underline;
   color: #00f;
   cursor: help;
+}
+
+span[data-totalProduct]:hover::after {
+  content: attr(data-totalProduct);
+  font-size: 14px;
+  z-index: 1;
+  padding: 12px;
+}
+
+.product__actions {
+  margin-left: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.5rem;
+  position: relative;
+  top: 1.5rem;
+}
+
+.btn.btn-outline-remove {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url(https://th.bing.com/th/id/R.0569324…?rik=srusOzM02eFLDg&riu=http%3a%2f%2fwww.psdgraphics.com%2ffile%2fred-delete-button.jpg&ehk=s3oQvmM7s4m4Lseh9R5OUpjtj71nQ20IRKtXoDHp5io%3d&risl=&pid=ImgRaw&r=0);
+  background-size: cover;
+}
+
+.moreBuy {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url(https://th.bing.com/th/id/OIP.jjTGoH6zlc-i-vRm98FuZgAAAA?pid=ImgDet&rs=1);
+  background-size: cover;
+  position: relative;
+  right: 1.4rem;
+  z-index: -1;
+  top: 0.5rem;
+}
+
+.imgInterogation {
+  width: 1rem;
+  height: 1rem;
+  background: url(https://img.favpng.com/17/6/22/question-mark-computer-icons-png-favpng-8WdXpeE8x54TkcUezYC6XDVUp.jpg);
+  background-size: cover;
+  position: relative;
+  right: 1.4rem;
+  bottom: 1rem;
+}
+
+.totalBasketImg {
+  background: url(https://www.vonco.com/wp-content/uploads/2020/04/cart-icon-3-500x500.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
+.text_choice {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.7rem;
+  font-style: italic;
+  gap: 0.5rem;
+  position: relative;
+  bottom: 0.3rem;
+}
+
+.btn.btn-outline-add {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url(https://www.psdgraphics.com/file/blue-add-button.jpg);
+  background-size: cover;
+}
+
+.modalFlex {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.price-modal {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    position: relative;
+    top: 2rem;
+}
+
+.card-price-modal {
+  font-weight: bold;
+}
+
+.card-promo-modal {
+  font-size: 0.8rem;
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+.button-modal {
+  display: flex;
+  flex-direction: row;
+  margin-left: -8rem;
+  margin-top: 5rem;
+  gap: 2rem;
+}
+
+.card-modal {
+  background-color: rgb(255 255 255);
+  display: flex;
+  width: 17rem;
+  height: 15rem;
+  margin: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.headerModal {
+  width: 55rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-marque-modal {
+  font-weight: 700;
+}
+
+.card-type-modal {
+  font-size: 0.9rem;
+}
+
+.card-modal img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.all {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(https://images.alphacoders.com/605/thumb-1920-605746.jpg);
+    height: 40rem;
+}
+
+.header {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.picturePromo {
+  width: 3rem;
+  height: 3rem;
+  background: url(https://www.logolynx.com/images/logolynx/4a/4acc323a08e1b06892a7cf2e2953edb3.jpeg);
+  border-radius: 50%;
+  background-size: cover;
+  position: relative;
+    left: 2rem;
+}
+
+.modalClose {
+  color: rgb(0 0 0);
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 75rem;
 }
 
 span[data-descr]:hover::after {
@@ -306,16 +566,106 @@ span[data-descr]:hover::after {
   z-index: 1;
 }
 .container {
+  width: 75%;
   display: flex;
   flex-direction: row;
   margin: 0;
-  .card {
+  // display: none;
+}
+
+#target {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(77, 77, 77, 0.7);
+  transition: all 0.4s;
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    .modalClose {
+      display: flex;
+      justify-content: flex-end;
+      color: rgb(0 0 0);
+      text-decoration: none;
+      &:target-within {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.product__model {
+  font-weight: 800;
+  position: relative;
+  top: 2rem;
+}
+.card {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  width: 23rem;
+  width: 20rem;
   margin: 0.5rem;
 }
 .row {
   width: 1130px;
- }
- 
+}
+
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 25px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 10px;
+  bottom: 0.7rem;
+  right: 1rem;
+}
+
+.button-29:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
 }

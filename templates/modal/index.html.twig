@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ModalController!
+{% endblock %}
+
+{% block body %}
+	<a id="ancre" href="#target">
+		<button class="button-29" role="button">Besoin d'idées ?</button>
+	</a>
+	<div id="target" class="modal">
+		<section class="all">
+			<section class="headerModal">
+				<div class="header">
+					<a href="/" class="modalClose">&times;</a>
+					<div class="imgModal"></div>
+					<p>Jetez un coup d'oeil, ManoMano à peut-être trouvé votre prochain achat !</p>
+				</div>
+			</section>
+			<section class="modalFlex">
+				{% for product in products|slice(18, 22) %}
+                <div class="picturePromo"></div>
+					<div class="card-modal">
+						<img src="{{product.picture}}" class="card-img-modal" alt="">
+						<div class="col-md-15">
+							<div class="card-body-modal">
+								<h5 class="card-marque-modal">{{product.brand}}</h5>
+								<p class="card-type-modal">{{product.category}}</p>
+								<div class="price-modal">
+									<p class="card-price-modal">{{product.price|number_format(2, '.',)}}€</p>
+									<p class="card-promo-modal">{{product.depth}}.00€</p>
+								</div>
+							</div>
+							<div class="button-modal" display>
+								<a href="{{ path('cart_add', {'id': product.id}) }}">
+									<button class="button button-basket-modal"></button>
+								</a>
+								<a href="{{ path('comparator_add', {'id': product.id}) }}">
+									<span data-descr="Ajouter au comparateur">
+										<button class="button-comparator-modal"></button>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</section>
+		</section>
+	</div>
+{% endblock %}
