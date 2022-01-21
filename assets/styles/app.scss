@@ -86,7 +86,7 @@ i {
 }
 
 .navigation {
-  position: sticky;
+  position: absolute;
   width: 7rem;
   height: 100%;
   background: #fcfcfc;
@@ -622,7 +622,7 @@ span[data-descr]:hover::after {
   margin: 0.5rem;
 }
 .row {
-  width: 1130px;
+  width: 1331px;
 }
 
 .button-29, .button-29-finish {
@@ -677,4 +677,22 @@ span[data-descr]:hover::after {
 .button-29:active, .button-29-finish:active {
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+
+.leftSidebar {
+  width: 16%;
+}
+
+.navigation {
+  right: 0;
+}
+
+#minPrices\.per_item\.actual_price\.with_vat\.as_float {
+  width: 8rem;
+
+
+  #maxPrices\.per_item\.actual_price\.with_vat\.as_float {
+  width: 8rem;
+  }
 }

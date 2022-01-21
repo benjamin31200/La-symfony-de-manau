@@ -3,6 +3,17 @@
 {% block body %}
 
 	<div class="Category_bradcrumbContainer__grwyN">
+	<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Recherche Favorites
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+{% for search in searchList %}
+    <a class="dropdown-item" href="/search/{{ search.title }}">{{ search.name }}</a>
+{% endfor %}
+    <a class="dropdown-item" href="/search/new">Nouvelle recherche favorite</a>
+</div>
+</div>
 		<ul class="root_4df1dd45 Category_breadcrumb__h6MWL">
 			<li class="item_4df1dd45">
 				<a class="root_594203a0 link_594203a0" href="/">Accueil</a>
@@ -92,7 +103,7 @@
 								</div>
 								<div class="RangeSelect_max__FBhYq container_90f49d77">
 									<div class="content_90f49d77">
-										<div class="wrapper_90f49d77"><input id="maxPrices.per_item.actual_price.with_vat.as_float" class="input_90f49d77" type="number" name="max" pattern="[0-9]*" min="3" max="7496.86" value="7496"><label for="maxPrices.per_item.actual_price.with_vat.as_float" class="label_90f49d77 on_90f49d77">Maximum</label>
+										<div class="wrapper_90f49d77"><input id="maxPrices.per_item.actual_price.with_vat.as_float" class="input_90f49d77" type="number" name="max" pattern="[0-9]*" min="3" max="7496.86" value="7496" style= "width:8rem;"><label for="maxPrices.per_item.actual_price.with_vat.as_float" class="label_90f49d77 on_90f49d77">Maximum</label>
 										</div>
 									</div>
 								</div>
