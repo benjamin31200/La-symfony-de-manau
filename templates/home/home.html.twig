@@ -187,45 +187,45 @@
 				{% endfor %}
 			</div>
 		</div>
-	<div id="target" class="modal">
-		<section class="all">
-			<section class="headerModal">
-				<div class="header">
-					<a href="/" class="modalClose">&times;</a>
-					<div class="imgModal"></div>
-					<p>Jetez un coup d'oeil, ManoMano à peut-être trouvé votre prochain achat !</p>
-				</div>
-			</section>
-			<section class="modalFlex">
-				{% for product in products|slice(19, 22) %}
-                <div class="picturePromo"></div>
-					<div class="card-modal">
-						<img src="{{product.picture}}" class="card-img-modal" alt="">
-						<div class="col-md-15">
-							<div class="card-body-modal">
-								<h5 class="card-marque-modal">{{product.brand}}</h5>
-								<p class="card-type-modal">{{product.category}}</p>
-								<div class="price-modal">
-									<p class="card-price-modal">{{product.price|number_format(2, '.',)}}€</p>
-									<p class="card-promo-modal">{{product.depth}}.00€</p>
+		<div id="target" class="modal">
+			<section class="all">
+				<section class="headerModal">
+					<div class="header">
+						<a href="/" class="modalClose">&times;</a>
+						<div class="imgModal"></div>
+						<p>Jetez un coup d'oeil, ManoMano à peut-être trouvé votre prochain achat !</p>
+					</div>
+				</section>
+				<section class="modalFlex">
+					{% for product in products|slice(19, 22) %}
+						<div class="picturePromo"></div>
+						<div class="card-modal">
+							<img src="{{product.picture}}" class="card-img-modal" alt="">
+							<div class="col-md-15">
+								<div class="card-body-modal">
+									<h5 class="card-marque-modal">{{product.brand}}</h5>
+									<p class="card-type-modal">{{product.category}}</p>
+									<div class="price-modal">
+										<p class="card-price-modal">{{product.price|number_format(2, '.',)}}€</p>
+										<p class="card-promo-modal">{{product.depth}}.00€</p>
+									</div>
+								</div>
+								<div class="button-modal" display>
+									<a href="{{ path('cart_add', {'id': product.id}) }}">
+										<button class="button button-basket-modal"></button>
+									</a>
+									<a href="{{ path('comparator_add', {'id': product.id}) }}">
+										<span data-descr="Ajouter au comparateur">
+											<button class="button-comparator-modal"></button>
+										</span>
+									</a>
 								</div>
 							</div>
-							<div class="button-modal" display>
-								<a href="{{ path('cart_add', {'id': product.id}) }}">
-									<button class="button button-basket-modal"></button>
-								</a>
-								<a href="{{ path('comparator_add', {'id': product.id}) }}">
-									<span data-descr="Ajouter au comparateur">
-										<button class="button-comparator-modal"></button>
-									</span>
-								</a>
-							</div>
 						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
+				</section>
 			</section>
-		</section>
-	</div>
+		</div>
 		<div class="navigation">
 			<ul>
 				<li>
@@ -280,6 +280,7 @@
 										<h2>Total:
 											{{ total|number_format(2) }}€</h2>
 									</div>
+									<a class="button" href=""><button class="button-29-finish">Valider le Panier</button></a>
 								</div>
 							{% endif %}
 						</div>

@@ -602,6 +602,15 @@ span[data-descr]:hover::after {
   }
 }
 
+.button-29-finish {
+  margin-top: 1rem;
+}
+
+.total__total h2 {
+  font-size: 1.4rem;
+    font-weight: 800;
+}
+
 .product__model {
   font-weight: 800;
   position: relative;
@@ -616,7 +625,7 @@ span[data-descr]:hover::after {
   width: 1130px;
 }
 
-.button-29 {
+.button-29, .button-29-finish {
   align-items: center;
   appearance: none;
   background-image: radial-gradient(
@@ -654,18 +663,18 @@ span[data-descr]:hover::after {
   right: 1rem;
 }
 
-.button-29:focus {
+.button-29:focus, .button-29-finish:focus {
   box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
     rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
-.button-29:hover {
+.button-29:hover, .button-29-finish:hover {
   box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
     rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
-.button-29:active {
+.button-29:active, .button-29-finish:active {
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
 }
